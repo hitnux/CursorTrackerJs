@@ -75,6 +75,10 @@
             background-color: #2C3333;
             color: #fff;
             padding-top: 11px;
+            min-width: 700px;
+        }
+        .code {
+            overflow-x: scroll;
         }
     </style>
     <header>
@@ -145,19 +149,21 @@
                     <div class="desc">The classes of the tracker element</div>
                 </div>
             </div>
-            <pre>
-                const tracker = new CursorTracker({
-                    id: 'tracker',
-                    container: '.container .box',
-                    selector: '.content',
-                    top: 25,
-                    left: 15,
-                    active: 'active',
-                    breakpoint: '1024px',
-                    innerHtml: 'Cursor is here',
-                    classes: 'cursor-tracker'
-                });
-            </pre>
+            <div class="code">
+                <pre>
+    const tracker = new CursorTracker({
+        id: 'tracker',
+        container: '.container .box',
+        selector: '.content',
+        top: 25,
+        left: 15,
+        active: 'active',
+        breakpoint: '1024px',
+        innerHtml: 'Cursor is here',
+        classes: 'cursor-tracker'
+    });
+                </pre>
+            </div>
             <h1>Functions</h1>
             <div class="table">
                 <div class="th row">
@@ -169,10 +175,13 @@
                     <div class="desc">Tracking a custom item</div>
                 </div>
             </div>
-            <pre>
-                const pause = document.getElementById('pause');
-                tracker.onTheElement({ target: pause, classes: 'hidden' });
-            </pre>
+            <div class="code">
+                <pre>
+    const pause = document.getElementById('pause');
+    tracker.onTheElement({ target: pause, classes: 'hidden' });
+                </pre>  
+            </div>
+            
             <h1>Events</h1>
             <div class="table">
                 <div class="th row">
@@ -192,9 +201,11 @@
                     <div class="desc">Event to run while tracker is moving</div>
                 </div>
             </div>
-            <pre>
-                document.querySelector('.container').addEventListener('activated', (e) => { console.log(e) })
-            </pre>
+            <div class="code">
+                <pre>
+    document.querySelector('.container').addEventListener('activated', (e) => { console.log(e) })
+                </pre>
+            </div>
         </div>
     </section>
     <script src="cursor-tracker-min.js"></script>
