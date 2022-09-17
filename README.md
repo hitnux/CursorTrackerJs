@@ -3,11 +3,17 @@
 
 ## Options
 
-| Title  | Type  | Description  |
+| Title  | Type  | Description  | Default |
 |---|---|---|
-| id  | String  | The id of the tracker element  |
-| container  | String  | Target container classes  |
-| selector  | String  | Target content class  |
+| id  | String  | The id of the tracker element  | "cursor-tracker" |
+| container  | String  | Target container classes  | ".ct-container" |
+| selector  | String  | Target content class  | ".ct-content" |
+| top  | Number  | Top space of the Tracker  | 5 |
+| left  | Number  | Left space of the Tracker  | 0 |
+| active  | String  | The class that the active container will receive  | "active" |
+| breakpoint  | String  | Minimum device width  | "1024px" |
+| innerHtml  | String  | Html of tracker element  | "" |
+| classes  | String  | The classes of the tracker element  | "" |
 
 ```javascript
 const tracker = new CursorTracker({
