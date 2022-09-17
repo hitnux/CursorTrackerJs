@@ -3,11 +3,11 @@
 
 ## Options
 
-|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+| Title  | Type  | Description  |
+|---|---|---|
+| id  | String  | The id of the tracker element  |
+| container  | String  | Target container classes  |
+| selector  | String  | Target content class  |
 
 ```javascript
 const tracker = new CursorTracker({
