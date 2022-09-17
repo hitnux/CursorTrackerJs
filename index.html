@@ -84,6 +84,12 @@
     <section>
         <div>
             <h1>Cursor Tracker</h1>
+            <div>
+                <div class="ct-pause">
+                    <script async src="//jsfiddle.net/hitnux/0p8rtuxo/94/embed/result/dark/"></script>
+                </div>
+            </div>
+            
             <p style="margin-top:20px;">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
@@ -146,17 +152,21 @@
         const github = document.querySelector('.github');
         ct.onTheElement({ target: github, classes: 'light hidden' });
 
-        const pauseElement = document.querySelector('.ct-pause');
-        ct.onTheElement({ 
-            target: pauseElement, 
-            classes: 'hidden',
-            activated: () => {
-                pauseElement.innerHTML = 'Paused';
-            },
-            deactivated: () => {
-                pauseElement.innerHTML = 'Pause';
-            }
+        const pauseElement = document.querySelectorAll('.ct-pause');
+
+        pauseElement.forEach(target => {
+            ct.onTheElement({ 
+                target, 
+                classes: 'hidden',
+                activated: () => {
+                    pauseElement.innerHTML = 'Paused';
+                },
+                deactivated: () => {
+                    pauseElement.innerHTML = 'Pause';
+                }
+            });
         });
+        
     
 
         document.querySelector('#ct').addEventListener('activated', (e) => {
