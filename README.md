@@ -31,12 +31,22 @@ const tracker = new CursorTracker({
 
 ## Functions
 
+| Title  | Description |
+|---|---|
+| onTheElement | Tracking a custom item |
+
 ```javascript
 const pause = document.getElementById('pause');
 tracker.onTheElement({ target: pause, classes: 'hidden' });             
 ```
   
  ## Events
+ 
+ | Title  | Description |
+|---|---|
+| activated | Event to run when container is active |
+| deactivated | Event to run when the container is deactivated |
+| moving | Event to run while tracker is moving |
 
 ```javascript
 document.querySelector('.container').addEventListener('activated', (e) => { console.log(e) })           
