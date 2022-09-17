@@ -4,7 +4,7 @@
 ## Options
 
 | Title  | Type  | Description  | Default |
-|---|---|---|
+|---|---|---|---|
 | id  | String  | The id of the tracker element  | "cursor-tracker" |
 | container  | String  | Target container classes  | ".ct-container" |
 | selector  | String  | Target content class  | ".ct-content" |
