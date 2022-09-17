@@ -58,13 +58,19 @@
             margin: 0 3px;
         }
         .title {
-            width: 20%;
+            width: 23%;
         }
         .type {
-            width: 20%;
+            width: 22%;
             text-align: center;
         }
+        .col-2 .title {
+            width: 40%;
+        }
         .desc {
+            width: 55%;
+        }
+        .col-2 .desc {
             width: 60%;
         }
         .th {
@@ -106,37 +112,37 @@
                 <div class="row">
                     <div class="title">id</div>
                     <div class="type"><span class="badge">String</span></div>
-                    <div class="desc">The id of the tracker element</div>
+                    <div class="desc">The id of the tracker element <br><br><b>Default:</b>"cursor-tracker"</div>
                 </div>
                 <div class="row">
                     <div class="title">container</div>
                     <div class="type"><span class="badge">String</span></div>
-                    <div class="desc">Target container classes</div>
+                    <div class="desc">Target container classes <br><br><b>Default:</b>".ct-container"</div>
                 </div>
                 <div class="row">
                     <div class="title">selector</div>
                     <div class="type"><span class="badge">String</span></div>
-                    <div class="desc">Target content class</div>
+                    <div class="desc">Target content class <br><br><b>Default:</b>".ct-content"</div>
                 </div>
                 <div class="row">
                     <div class="title">top</div>
                     <div class="type"><span class="badge">Number</span></div>
-                    <div class="desc">Top space of the Tracker</div>
+                    <div class="desc">Top space of the Tracker <br><br><b>Default:</b>5</div>
                 </div>
                 <div class="row">
                     <div class="title">left</div>
                     <div class="type"><span class="badge">Number</span></div>
-                    <div class="desc">Left space of the Tracker</div>
+                    <div class="desc">Left space of the Tracker <br><br><b>Default:</b>0</div>
                 </div>
                 <div class="row">
                     <div class="title">active</div>
                     <div class="type"><span class="badge">String</span></div>
-                    <div class="desc">The class that the active container will receive</div>
+                    <div class="desc">The class that the active container will receive <br><br><b>Default:</b>"active"</div>
                 </div>
                 <div class="row">
                     <div class="title">breakpoint</div>
                     <div class="type"><span class="badge">String</span></div>
-                    <div class="desc">Minimum device width '768px'</div>
+                    <div class="desc">Minimum device width <br><br><b>Default:</b>"1024px"</div>
                 </div>
                 <div class="row">
                     <div class="title">innerHtml</div>
@@ -165,7 +171,7 @@
                 </pre>
             </div>
             <h1>Functions</h1>
-            <div class="table">
+            <div class="table col-2">
                 <div class="th row">
                     <div class="title">Title</div>
                     <div class="desc">Description</div>
@@ -183,7 +189,7 @@
             </div>
             
             <h1>Events</h1>
-            <div class="table">
+            <div class="table col-2">
                 <div class="th row">
                     <div class="title">Title</div>
                     <div class="desc">Description</div>
