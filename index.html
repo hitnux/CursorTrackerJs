@@ -24,45 +24,14 @@
             text-decoration: none;
         }
         h1 {
-            margin-top: 50px;
-        }
-        p {
-            margin: 60px 0;
-        }
-        img {
-            max-width: 100%;
+            margin-top: 30px;
         }
         section {
-            max-width: 75%;
+            max-width: 1024px;
+            padding: 8px;
             margin: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .ct-container {
-            cursor: pointer;
-        }
-        .relative {
-            position: relative;
-        }
-        .custom, .paused {
-            position: absolute;
-            top: calc(50% - 19px);
-            left: calc(50% - 53px);
-            padding: 10px;
-            border-radius: 4px;
-            color: #fff;
         }
         .custom {
-            background-color: #2C3333;
-        }
-        .paused {
-            width: 75px;
-            text-align: center;
-            background-color: red;
-        }
-        .light {
             background-color: #277BC0;
             color: #fff;
             padding: 4px;
@@ -71,10 +40,46 @@
         .hidden {
             display: none;
         }
+        .table {
+            margin: 8px 0 50px;
+        }
+        .row {
+            display: flex;
+            overflow-x: auto;
+            padding: 16px;
+        }
+        .row:nth-child(even) {
+            background-color: #eee;
+        }
+        .badge {
+            background: #ddd;
+            padding: 4px;
+            border-radius: 4px;
+            margin: 0 3px;
+        }
+        .title {
+            width: 20%;
+        }
+        .type {
+            width: 20%;
+            text-align: center;
+        }
+        .desc {
+            width: 60%;
+        }
+        .th {
+            border-bottom: solid 1px black;
+            padding-bottom: 8px;
+        }
+        pre {
+            background-color: #2C3333;
+            color: #fff;
+            padding-top: 11px;
+        }
     </style>
     <header>
         <a href="#">CursorTracker.js</a>
-        <a href="https://github.com/hitnux/CursorTracker" class="ct-container github" target="_blank">
+        <a href="https://github.com/hitnux/CursorTrackerJS" class="ct-container github" target="_blank">
             Github
             <template class="ct-content">
                 See source code
@@ -83,94 +88,132 @@
     </header>
     <section>
         <div>
-            <h1>Cursor Tracker</h1>
-            <div>
-                <div class="ct-pause">
-                    <script async src="//jsfiddle.net/hitnux/0p8rtuxo/94/embed/result/dark/"></script>
+            <h1>Examples</h1>
+            <div class="example">
+                <script async src="//jsfiddle.net/hitnux/0p8rtuxo/94/embed/result/dark/"></script>
+            </div>
+            <h1>Options</h1>
+            <div class="table">
+                <div class="th row">
+                    <div class="title">Title</div>
+                    <div class="type">Type</div>
+                    <div class="desc">Description</div>
+                </div>
+                <div class="row">
+                    <div class="title">id</div>
+                    <div class="type"><span class="badge">String</span></div>
+                    <div class="desc">The id of the tracker element</div>
+                </div>
+                <div class="row">
+                    <div class="title">container</div>
+                    <div class="type"><span class="badge">String</span></div>
+                    <div class="desc">Target container classes</div>
+                </div>
+                <div class="row">
+                    <div class="title">selector</div>
+                    <div class="type"><span class="badge">String</span></div>
+                    <div class="desc">Target content class</div>
+                </div>
+                <div class="row">
+                    <div class="title">top</div>
+                    <div class="type"><span class="badge">Number</span></div>
+                    <div class="desc">Top space of the Tracker</div>
+                </div>
+                <div class="row">
+                    <div class="title">left</div>
+                    <div class="type"><span class="badge">Number</span></div>
+                    <div class="desc">Left space of the Tracker</div>
+                </div>
+                <div class="row">
+                    <div class="title">active</div>
+                    <div class="type"><span class="badge">String</span></div>
+                    <div class="desc">The class that the active container will receive</div>
+                </div>
+                <div class="row">
+                    <div class="title">breakpoint</div>
+                    <div class="type"><span class="badge">String</span></div>
+                    <div class="desc">Minimum device width '768px'</div>
+                </div>
+                <div class="row">
+                    <div class="title">innerHtml</div>
+                    <div class="type"><span class="badge">String</span></div>
+                    <div class="desc">Html of tracker element</div>
+                </div>
+                <div class="row">
+                    <div class="title">classes</div>
+                    <div class="type"><span class="badge">String</span></div>
+                    <div class="desc">The classes of the tracker element</div>
                 </div>
             </div>
-            
-            <p style="margin-top:20px;">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-        </div>
-        <div class="ct-container relative">
-            <img src="https://via.placeholder.com/700x400/ccc"/>
-            <div class="ct-pause paused">Pause</div>
-            <template class="ct-content">
-                <h5>Buy Now</h5>
-            </template>
-        </div>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <div class="ct-container relative">
-            <img src="https://via.placeholder.com/700x400/DFD3C3"/>
-            <template class="ct-content">
-                <h5>Buy Online</h5>
-            </template>
-            <div class="ct-container custom">
-                Custom Area
-                <template class="ct-content">
-                    <h5>Visit</h5>
-                </template>
+            <pre>
+                const tracker = new CursorTracker({
+                    id: 'tracker',
+                    container: '.container .box',
+                    selector: '.content',
+                    top: 25,
+                    left: 15,
+                    active: 'active',
+                    breakpoint: '1024px',
+                    innerHtml: 'Cursor is here',
+                    classes: 'cursor-tracker'
+                });
+            </pre>
+            <h1>Functions</h1>
+            <div class="table">
+                <div class="th row">
+                    <div class="title">Title</div>
+                    <div class="desc">Description</div>
+                </div>
+                <div class="row">
+                    <div class="title">onTheElement</div>
+                    <div class="desc">Tracking a custom item</div>
+                </div>
             </div>
+            <pre>
+                const pause = document.getElementById('pause');
+                tracker.onTheElement({ target: pause, classes: 'hidden' });
+            </pre>
+            <h1>Events</h1>
+            <div class="table">
+                <div class="th row">
+                    <div class="title">Title</div>
+                    <div class="desc">Description</div>
+                </div>
+                <div class="row">
+                    <div class="title">activated</div>
+                    <div class="desc">Event to run when container is active</div>
+                </div>
+                <div class="row">
+                    <div class="title">deactivated</div>
+                    <div class="desc">Event to run when the container is deactivated</div>
+                </div>
+                <div class="row">
+                    <div class="title">moving</div>
+                    <div class="desc">Event to run while tracker is moving</div>
+                </div>
+            </div>
+            <pre>
+                document.querySelector('.container').addEventListener('activated', (e) => { console.log(e) })
+            </pre>
         </div>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <div class="custom-container">
-            <img src="https://via.placeholder.com/700x400/DFD3C3"/>
-            <template class="ct-content">
-                <h5>Welcome</h5>
-            </template>
-        </div>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
     </section>
     <script src="cursor-tracker-min.js"></script>
     <script>
         const ct = new CursorTracker({
             id: 'ct',
-            innerHtml: 'cursortracker.js',
-            classes: 'test'
+            innerHtml: 'cursortracker.js'
         });
-
-        const customContainer = document.querySelector('.custom-container');
-        ct.createContainer({ target: customContainer });
 
         const header = document.querySelector('header');
         ct.onTheElement({ target: header, classes: 'hidden' });
 
         const github = document.querySelector('.github');
-        ct.onTheElement({ target: github, classes: 'light hidden' });
+        ct.onTheElement({ target: github, classes: 'custom hidden' });
 
-        const pauseElement = document.querySelectorAll('.ct-pause');
-
-        pauseElement.forEach(target => {
-            ct.onTheElement({ 
-                target, 
-                classes: 'hidden',
-                activated: () => {
-                    pauseElement.innerHTML = 'Paused';
-                },
-                deactivated: () => {
-                    pauseElement.innerHTML = 'Pause';
-                }
-            });
-        });
-        
-    
-
-        document.querySelector('#ct').addEventListener('activated', (e) => {
-            console.log(e);
+        const example = document.querySelector('.example');
+        ct.onTheElement({ 
+            target: example, 
+            classes: 'hidden'
         });
     </script>
 </body>
