@@ -76,6 +76,7 @@ class CursorTracker {
             classes?.split(' ').forEach((cls) => {
                 this.element.classList.toggle(cls);
             });
+            target.classList.add(this.config.active);
             if (activated) activated(e);
             this.on('activated', { activatedElement: target, originalEvent: e }, target);
         });
@@ -83,6 +84,7 @@ class CursorTracker {
             classes?.split(' ').forEach((cls) => {
                 this.element.classList.toggle(cls);
             });
+            target.classList.remove(this.config.active);
             if (deactivated) deactivated(e);
             this.on('deactivated', { deactivatedElement: target, originalEvent: e }, target);
         });
@@ -91,7 +93,6 @@ class CursorTracker {
     createContainer({ target }) {
         this.onTheElement({
             target,
-            classes: this.config.active,
             activated: () => {
                 this.element.innerHTML = target.querySelector(this.config.selector).innerHTML;
             },
