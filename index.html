@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Tracker</title>
+</head>
+<body>
+    <style>
+        body, html {  
+            margin: 0;
+            font-family: sans-serif;
+        }
+        header {
+            background: #2C3333;
+            color: #ffffff;
+            padding: 25px calc(25vw / 2);
+            display: flex;
+            justify-content: space-between;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        p {
+            margin: 60px 0;
+        }
+        img {
+            max-width: 100%;
+        }
+        section {
+            max-width: 75%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ct-container {
+            cursor: pointer;
+        }
+        .relative {
+            position: relative;
+        }
+        .custom, .paused {
+            position: absolute;
+            top: calc(50% - 19px);
+            left: calc(50% - 53px);
+            padding: 10px;
+            border-radius: 4px;
+            color: #fff;
+        }
+        .custom {
+            background-color: #2C3333;
+        }
+        .paused {
+            width: 75px;
+            text-align: center;
+            background-color: red;
+        }
+        .light {
+            background-color: #277BC0;
+            color: #fff;
+            padding: 4px;
+            border-radius: 4px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <header>
+        <a href="#">CursorTracker.js</a>
+        <a href="https://github.com/hitnux/CursorTracker" class="ct-container github" target="_blank">
+            Github
+            <template class="ct-content">
+                See source code
+            </template>
+        </a>
+    </header>
+    <section>
+        <div>
+            <h1>Cursor Tracker</h1>
+            <p style="margin-top:20px;">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </div>
+        <div class="ct-container relative">
+            <img src="https://via.placeholder.com/700x400/ccc"/>
+            <div class="ct-pause paused">Pause</div>
+            <template class="ct-content">
+                <h5>Buy Now</h5>
+            </template>
+        </div>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <div class="ct-container relative">
+            <img src="https://via.placeholder.com/700x400/DFD3C3"/>
+            <template class="ct-content">
+                <h5>Buy Online</h5>
+            </template>
+            <div class="ct-container custom">
+                Custom Area
+                <template class="ct-content">
+                    <h5>Visit</h5>
+                </template>
+            </div>
+        </div>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <div class="custom-container">
+            <img src="https://via.placeholder.com/700x400/DFD3C3"/>
+            <template class="ct-content">
+                <h5>Welcome</h5>
+            </template>
+        </div>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </section>
+    <script src="cursor-tracker-min.js"></script>
+    <script>
+        const ct = new CursorTracker({
+            id: 'ct',
+            innerHtml: 'cursortracker.js',
+            classes: 'test'
+        });
+
+        const customContainer = document.querySelector('.custom-container');
+        ct.createContainer({ target: customContainer });
+
+        const header = document.querySelector('header');
+        ct.onTheElement({ target: header, classes: 'hidden' });
+
+        const github = document.querySelector('.github');
+        ct.onTheElement({ target: github, classes: 'light hidden' });
+
+        const pauseElement = document.querySelector('.ct-pause');
+        ct.onTheElement({ 
+            target: pauseElement, 
+            classes: 'hidden',
+            activated: () => {
+                pauseElement.innerHTML = 'Paused';
+            },
+            deactivated: () => {
+                pauseElement.innerHTML = 'Pause';
+            }
+        });
+    
+
+        document.querySelector('#ct').addEventListener('activated', (e) => {
+            console.log(e);
+        });
+    </script>
+</body>
+</html>
