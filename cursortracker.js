@@ -1,5 +1,5 @@
 class CursorTracker {
-    constructor(options) {
+    constructor(options = {}) {
         this.mouse = { event: false, x: 0, y: 0 };
         this.config = {
             id: 'cursor-tracker',
